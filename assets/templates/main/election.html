@@ -1,0 +1,767 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Elections</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Elearn project" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static 'styles/bootstrap4/bootstrap.min.css' %}"
+  />
+  <link
+    href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <link
+    href="{% static 'plugins/video-js/video-js.css' %}"
+    rel="stylesheet"
+    type="text/css"
+  />
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/courses.css' %}" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'styles/contact_responsive.css' %}"
+    />
+  </head>
+  <body>
+    <div class="super_container">
+      <!-- Header -->
+
+ 
+      <header class="header">
+        <!-- Top Bar -->
+        <div class="top_bar">
+          <div class="top_bar_container">
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <div
+                    class="top_bar_content d-flex flex-row align-items-center justify-content-start"
+                  >
+                    <ul class="top_bar_contact_list">
+                      <li><div class="question">Have any questions?</div></li>
+                      <li>
+                        <div>9999888877</div>
+                      </li>
+                      <li>
+                        <div>codebook@gmail.com</div>
+                      </li>
+                    </ul>
+                    <div class="top_bar_login ml-auto">
+                      <ul>
+                        <li><a href="{% url 'admin-login' %}">Admin</a></li>
+                     
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Header Content -->
+        <div class="header_container">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <div
+                  class="header_content d-flex flex-row align-items-center justify-content-start"
+                >
+                  <div class="logo_container">
+                    <a href="#">
+                      <div
+                        class="logo_content d-flex flex-row align-items-end justify-content-start"
+                      >
+                        <div class="logo_img">
+                          <img src="{% static 'images/logo.png' %}" alt="" />
+                        </div>
+                        <div class="logo_text">Voting</div>
+                      </div>
+                    </a>
+                  </div>
+                  <nav class="main_nav_contaner ml-auto">
+                    <ul class="main_nav">
+                      <li ><a href="{% url 'home' %}">home</a></li>
+                      <li><a href="{% url 'about' %}">about us</a></li>
+                    
+                      <li><a href="{% url 'candi-login' %}">candiate</a></li>
+                      <li><a href="{% url 'voter-login' %}">voter</a></li>
+                      <li class="active"><a href="{% url 'election' %}">Elections</a></li>
+                      <li><a href="{% url 'contact' %}">contact</a></li>
+                      
+                      
+                      
+                    </ul>
+                  
+                    <!-- Hamburger -->
+
+                    <div class="hamburger menu_mm">
+                      <i class="fa fa-bars menu_mm" aria-hidden="true"></i>
+                    </div>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Header Search Panel -->
+        <div class="header_search_container">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <div
+                  class="header_search_content d-flex flex-row align-items-center justify-content-end"
+                >
+                  <form action="#" class="header_search_form">
+                    <input
+                      type="search"
+                      class="search_input"
+                      placeholder="Search"
+                      required="required"
+                    />
+                    <button
+                      class="header_search_button d-flex flex-column align-items-center justify-content-center"
+                    >
+                      <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Menu -->
+
+      <div
+        class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400"
+      >
+        <div class="menu_close_container">
+          <div class="menu_close">
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+        <div class="search">
+          <form action="#" class="header_search_form menu_mm">
+            <input
+              type="search"
+              class="search_input menu_mm"
+              placeholder="Search"
+              required="required"
+            />
+            <button
+              class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm"
+            >
+              <i class="fa fa-search menu_mm" aria-hidden="true"></i>
+            </button>
+          </form>
+        </div>
+        <nav class="menu_nav">
+          <ul class="menu_mm">
+            <li class="menu_mm"><a href="{% url 'home' %}">Home</a></li>
+            <li class="menu_mm"><a href="{% url 'about' %}">about us</a></li>
+            <li class="menu_mm"><a href="{% url 'candi-login' %}">candiate</a></li>
+            <li class="menu_mm"><a href="{% url 'voter-login' %}">voter</a></li>
+           
+            <li class="menu_mm"><a href="{% url 'contact' %}">Contact</a></li>
+         
+          </ul>
+        </nav>
+        <div class="menu_extra">
+          <div class="menu_phone">
+            <span class="menu_title">phone:</span>9999888877
+          </div>
+          <div class="menu_social">
+            <span class="menu_title">follow us</span>
+            <ul>
+              <li>
+                <a href="#"
+                  ><i class="fa fa-pinterest" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fa fa-facebook" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fa fa-instagram" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Home -->
+
+      <div class="home">
+        <!-- Background image artist https://unsplash.com/@thepootphotographer -->
+        <div
+          class="home_background parallax_background parallax-window"
+          data-parallax="scroll"
+          data-image-src="{% static 'images/courses.jpg' %}"
+          data-speed="0.8"
+        ></div>
+        <div class="home_container">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <div class="home_content text-center">
+                  <div class="home_title">Elections</div>
+                  <div class="breadcrumbs">
+                    <ul>
+                      <li><a href="{% url 'home' %}">Home</a></li>
+                      <li>About elections</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Courses -->
+
+      <div class="courses">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+              <div class="section_title text-center">
+                <h2>Choose online voting?</h2>
+              </div>
+              <div class="section_subtitle">
+                Online voting tools and online election voting systems help you make important decisions
+                by gathering the input of your group in a way that’s systematic and verifiable.
+
+               Oftentimes, these decisions are made on a yearly basis - during an event or at a particular time of the year. 
+               Or you might run ongoing polls amongst your group 
+              </div>
+            </div>
+          </div>
+
+          <!-- Course Search -->
+      
+          <!-- Featured Course -->
+          <div class="row featured_row">
+            <div class="col-lg-6 featured_col">
+              <div class="featured_content">
+                <div
+                  class="featured_header d-flex flex-row align-items-center justify-content-start"
+                >
+                  <div class="featured_tag"><a href="#">How elections impact?</a></div>
+                
+                </div>
+                <div class="featured_title">
+                  <h3><a href="{% url 'election' %}">eletions impact in india</a></h3>
+                </div>
+                <div class="featured_text">
+                  The first and most obvious impact of an election is a significant increase in national debt being taken by the government.
+                   Elections in India and across the world are marked by the introduction of policies which are economic disasters but have political benefits.
+                    The rollout of welfare schemes which will become unsustainable in the long run is a common ploy which is used by parties which are in power 
+                    in order to woo the voters.
+                </div>
+                <div
+                  class="featured_footer d-flex align-items-center justify-content-start"
+                >
+                  <div class="featured_author_image">
+                    <img src="https://img.icons8.com/external-flat-icons-inmotus-design/67/000000/external-human-man-and-woman-flat-icons-inmotus-design.png"/>
+                  </div>
+                  
+                  <div class="featured_author_name">
+                    By <a href="#">codebook</a>
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 featured_col">
+              <!-- Background image artist https://unsplash.com/@jtylernix -->
+              <div
+                class="featured_background"
+                style="background-image: url('static/images/index-3.jpg')"
+              ></div>
+            </div>
+          </div>
+          <div class="row courses_row">
+            <!-- Course -->
+            <div class="col-lg-4 col-md-6">
+              <div class="course">
+                <div class="course_image">
+                  <img src="{% static 'images/ele-1.jpg' %}" alt="" style="height: 250px;" />
+                </div>
+                <div class="course_body">
+                  <div
+                    class="course_header d-flex flex-row align-items-center justify-content-start"
+                  >
+                    <div class="course_tag"><a href="#">General Elections</a></div>
+                 
+                  </div>
+                  <div class="course_title">
+                    <h3><a href="{% url 'election' %}">Lok sabha eletions</a></h3>
+                  </div>
+                  <div class="course_text">
+                    general election is a political voting election where generally all or most members of a given political body are chosen.
+                  </div>
+                  <div
+                    class="course_footer d-flex align-items-center justify-content-start"
+                  >
+                    <div class="course_author_image">
+                      <img src="https://img.icons8.com/external-flat-icons-inmotus-design/67/000000/external-human-man-and-woman-flat-icons-inmotus-design.png"/>
+                    </div>
+                   
+                    <div class="course_author_name">
+                      By <a href="#">codebook</a>
+                    </div>
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Course -->
+            <div class="col-lg-4 col-md-6">
+              <div class="course">
+                <div class="course_image">
+                  <img src="{% static 'images/ele-2.jpg' %}" alt=""  style="height: 250px;"/>
+                </div>
+                <div class="course_body">
+                  <div
+                    class="course_header d-flex flex-row align-items-center justify-content-start"
+                  >
+                    <div class="course_tag"><a href="#">Presidential Elections</a></div>
+                   
+                  </div>
+                  <div class="course_title">
+                    <h3><a href="{% url 'election' %}">Elections for President </a></h3>
+                  </div>
+                  <div class="course_text">
+                    All elected Members of Legislative Assemblies and Members of Parliament (Lok Sabha and Rajya Sabha), 
+                    elect the President of India.
+                  </div>
+                  <div
+                    class="course_footer d-flex align-items-center justify-content-start"
+                  >
+                    <div class="course_author_image">
+                      <img src="https://img.icons8.com/external-flat-icons-inmotus-design/67/000000/external-human-man-and-woman-flat-icons-inmotus-design.png"/>
+
+                    </div>
+                    <div class="course_author_name">
+                      By <a href="#">Codebook</a>
+                    </div>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Course -->
+            <div class="col-lg-4 col-md-6">
+              <div class="course">
+                <div class="course_image">
+                  <img src="{% static 'images/ele-3.jpg' %}" alt="" style="height: 250px;"/>
+                </div>
+                <div class="course_body">
+                  <div
+                    class="course_header d-flex flex-row align-items-center justify-content-start"
+                  >
+                    <div class="course_tag"><a href="#">Rajya Sabha Elections</a></div>
+                   
+                  </div>
+                  <div class="course_title">
+                    <h3><a href="{% url 'election' %}">Rajya Sabha Eletions</a></h3>
+                  </div>
+                  <div class="course_text">
+                    Candidates of Rajya Sabha, or the Upper House of the parliament are 
+                    not elected directly by the citizens of India.candidates of Rajya sabha. 
+                     
+                                </div>
+                  <div
+                    class="course_footer d-flex align-items-center justify-content-start"
+                  >
+                    <div class="course_author_image">
+                      <img src="https://img.icons8.com/external-flat-icons-inmotus-design/67/000000/external-human-man-and-woman-flat-icons-inmotus-design.png"/>
+
+                    </div>
+                    <div class="course_author_name">
+                      By <a href="#">Codebook</a>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Course -->
+            <div class="col-lg-4 col-md-6">
+              <div class="course">
+                <div class="course_image">
+                  <img src="{% static 'images/ele-4.jpg' %}" alt="" style="height: 250px;"/>
+                </div>
+                <div class="course_body">
+                  <div
+                    class="course_header d-flex flex-row align-items-center justify-content-start"
+                  >
+                    <div class="course_tag"><a href="#">State Assembly Elections</a></div>
+                  
+                  </div>
+                  <div class="course_title">
+                    <h3><a href="{% url 'election' %}">Assembly Elections</a></h3>
+                  </div>
+                  <div class="course_text">
+                    Members of State Legislative Assemblies are also elected directly by voting. 
+                    Every adult citizen of India can exercise their right to vote.
+                  </div>
+                  <div
+                    class="course_footer d-flex align-items-center justify-content-start"
+                  >
+                    <div class="course_author_image">
+                      <img src="https://img.icons8.com/external-flat-icons-inmotus-design/67/000000/external-human-man-and-woman-flat-icons-inmotus-design.png"/>
+
+                    </div>
+                    <div class="course_author_name">
+                      By <a href="#">codebook</a>
+                    </div>
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Course -->
+            <div class="col-lg-4 col-md-6">
+              <div class="course">
+                <div class="course_image">
+                  <img src="{% static 'images/voting.jpg' %}" alt="" style="height: 250px;"/>
+                </div>
+                <div class="course_body">
+                  <div
+                    class="course_header d-flex flex-row align-items-center justify-content-start"
+                  >
+                    <div class="course_tag"><a href="#">Legistative Council Elections</a></div>
+                    
+                  </div>
+                  <div class="course_title">
+                    <h3><a href="courses.html">Council Eletions</a></h3>
+                  </div>
+                  <div class="course_text">
+                    The composition of legislative council is partly through indirect election, 
+                    partly through special constituencies and partly by nomination.
+                  </div>
+                  <div
+                    class="course_footer d-flex align-items-center justify-content-start"
+                  >
+                    <div class="course_author_image">
+                      <img src="https://img.icons8.com/external-flat-icons-inmotus-design/67/000000/external-human-man-and-woman-flat-icons-inmotus-design.png"/>
+
+                    </div>
+                    <div class="course_author_name">
+                      By <a href="#">Codebook</a>
+                    </div>
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Course -->
+            <div class="col-lg-4 col-md-6">
+              <div class="course">
+                <div class="course_image">
+                  <img src="{% static 'images/ele-6.jpg' %}" alt=""  style="height: 250px;"/>
+                </div>
+                <div class="course_body">
+                  <div
+                    class="course_header d-flex flex-row align-items-center justify-content-start"
+                  >
+                    <div class="course_tag"><a href="#">Gram PanChayat Elections</a></div>
+                    
+                  </div>
+                  <div class="course_title">
+                    <h3><a href="{% url 'election' %}">Panchayat Elections</a></h3>
+                  </div>
+                  <div class="course_text">
+                    The gram panchayat also has a Secretary, who is a non-elected representative, 
+                    appointed by the state government, to oversee panchayat activities.
+                  </div>
+                  <div
+                    class="course_footer d-flex align-items-center justify-content-start"
+                  >
+                    <div class="course_author_image">
+                      <img src="https://img.icons8.com/external-flat-icons-inmotus-design/67/000000/external-human-man-and-woman-flat-icons-inmotus-design.png"/>
+
+                    </div>
+                    <div class="course_author_name">
+                      By <a href="#">Codebook</a>
+                    </div>
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Course -->
+            <div class="col-lg-4 col-md-6">
+              <div class="course">
+                <div class="course_image">
+                  <img src="{% static 'images/evoting-566.jpg' %}" alt=""  style="height: 250px;width: 370px;"/>
+                </div>
+                <div class="course_body">
+                  <div
+                    class="course_header d-flex flex-row align-items-center justify-content-start"
+                  >
+                    <div class="course_tag"><a href="#">Zilla Parishad Eletions</a></div>
+                  
+                  </div>
+                  <div class="course_title">
+                    <h3><a href="{% url 'election' %}">Parishad Eletions</a></h3>
+                  </div>
+                  <div class="course_text">
+                    The Zila Panchayat or District Council or Zila Parishad or District Panchayat ,
+                     is the third tier of the Panchayati Raj system.the system of Rajya sabha
+                  </div>
+                  <div
+                    class="course_footer d-flex align-items-center justify-content-start"
+                  >
+                    <div class="course_author_image">
+                      <img src="https://img.icons8.com/external-flat-icons-inmotus-design/67/000000/external-human-man-and-woman-flat-icons-inmotus-design.png"/>
+
+                    </div>
+                    <div class="course_author_name">
+                      By <a href="#">codebook</a>
+                    </div>
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Course -->
+            <div class="col-lg-4 col-md-6">
+              <div class="course">
+                <div class="course_image">
+                  <img src="{% static 'images/e-voting-56.jpg' %}" alt="" style="height: 250px;"/>
+                </div>
+                <div class="course_body">
+                  <div
+                    class="course_header d-flex flex-row align-items-center justify-content-start"
+                  >
+                    <div class="course_tag"><a href="#">Panchayat Samiti Elections</a></div>
+                    
+                  </div>
+                  <div class="course_title">
+                    <h3><a href="{% url 'election' %}">Samiti Elections</a></h3>
+                  </div>
+                  <div class="course_text">
+                    Panchayat Samiti, also called as Block Development Councils and Taluka panchayat,
+                    are rural local governments (panchayats) at the intermediate level. 
+                  </div>
+                  <div
+                    class="course_footer d-flex align-items-center justify-content-start"
+                  >
+                    <div class="course_author_image">
+                      <img src="https://img.icons8.com/external-flat-icons-inmotus-design/67/000000/external-human-man-and-woman-flat-icons-inmotus-design.png"/>
+
+                    </div>
+                    <div class="course_author_name">
+                      By <a href="#">Codebook</a>
+                    </div>
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Course -->
+            <div class="col-lg-4 col-md-6">
+              <div class="course">
+                <div class="course_image">
+                  <img src="{% static 'images/voting.jpg' %}" alt="" style="height: 250px;"/>
+                </div>
+                <div class="course_body">
+                  <div
+                    class="course_header d-flex flex-row align-items-center justify-content-start"
+                  >
+                    <div class="course_tag"><a href="#">What is an Election?</a></div>
+                  
+                  </div>
+                  <div class="course_title">
+                    <h3><a href="{% url 'election' %}">Elections</a></h3>
+                  </div>
+                  <div class="course_text">
+                    Elections form a vital part of the Indian democratic system and decides the functioning of the country and thus its economy.
+                     Elections are the way and 
+                  </div>
+                  <div
+                    class="course_footer d-flex align-items-center justify-content-start"
+                  >
+                    <div class="course_author_image">
+                      <img src="https://img.icons8.com/external-flat-icons-inmotus-design/67/000000/external-human-man-and-woman-flat-icons-inmotus-design.png"/>
+
+                    </div>
+                    <div class="course_author_name">
+                      By <a href="#">Codebook</a>
+                    </div>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pagination -->
+          <div class="row">
+            <div class="col">
+              <div class="courses_paginations">
+                <ul>
+                  <li class="active"><a href="#">01</a></li>
+                  <li><a href="#">02</a></li>
+                  <li><a href="#">03</a></li>
+                  <li><a href="#">04</a></li>
+                  <li><a href="#">05</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <!-- About -->
+            <div class="col-lg-3 footer_col">
+              <div class="footer_about">
+                <div class="logo_container">
+                  <a href="#">
+                    <div
+                      class="logo_content d-flex flex-row align-items-end justify-content-start"
+                    >
+                      <div class="logo_img">
+                        <img src="{% static 'images/logo.png' %}" alt="" />
+                      </div>
+                      <div class="logo_text">voting</div>
+                    </div>
+                  </a>
+                </div>
+                <div class="footer_about_text">
+                  <p>
+                    Online voting tools and online election voting systems help you make 
+                    important decisions by gathering the input of your group in a way that’s systematic and verifiable.
+                  </p>
+                </div>
+                <div class="footer_social">
+                  <ul>
+                    <li>
+                      <a href="#"
+                        ><i class="fa fa-google-plus" aria-hidden="true"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><i class="fa fa-pinterest" aria-hidden="true"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><i class="fa fa-facebook" aria-hidden="true"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><i class="fa fa-twitter" aria-hidden="true"></i
+                      ></a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="copyright">
+                  <!-- Link back to Codebook can't be removed. Template is licensed under CC BY 3.0. -->
+                  Copyright &copy;
+                  <script>
+                    document.write(new Date().getFullYear());
+                  </script>
+                  All rights reserved | This template is made with
+                  <i class="fa fa-heart-o" aria-hidden="true"></i> by
+                  <a href="https://codebook.com" target="_blank">Codebook</a>
+                  <!-- Link back to Codebook can't be removed. Template is licensed under CC BY 3.0. -->
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 footer_col">
+              <div class="footer_links">
+                <div class="footer_title">Quick menu</div>
+                <ul class="footer_list">
+                  <li><a href="{% url 'home' %}">Home</a></li>
+                  <li><a href="{% url 'about' %}">About us</a></li>
+                  <li><a href="#">Testimonials</a></li>
+                  <li><a href="#">Services</a></li>
+                  <li><a href="{% url 'contact' %}">Contact</a></li>
+                  <li><a href="#">Facts</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-3 footer_col">
+              <div class="footer_links">
+                <div class="footer_title">Useful Links</div>
+                <ul class="footer_list">
+                  <li><a href="{% url 'home' %}">Home</a></li>
+                  <li><a href="#">Register</a></li>
+                  <li><a href="{% url 'election' %}">Elections</a></li>
+                  <li><a href="#">Results</a></li>
+                  <li><a href="#">Links</a></li>
+                  <li><a href="#">FAQ</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-3 footer_col">
+              <div class="footer_contact">
+                <div class="footer_title">Contact Us</div>
+                <div class="footer_contact_info">
+                  <div class="footer_contact_item">
+                    <div class="footer_contact_title">Address:</div>
+                    <div class="footer_contact_line">
+                     Pillar no:A-1665,LBnagar,Hyderabad
+                    </div>
+                  </div>
+                  <div class="footer_contact_item">
+                    <div class="footer_contact_title">Phone:</div>
+                    <div class="footer_contact_line">9999888877</div>
+                  </div>
+                  <div class="footer_contact_item">
+                    <div class="footer_contact_title">Email:</div>
+                    <div class="footer_contact_line">codebook@gmail.com</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'styles/bootstrap4/popper.js' %}"></script>
+    <script src="{% static 'styles/bootstrap4/bootstrap.min.js' %}"></script>
+    <script src="{% static 'plugins/easing/easing.js' %}"></script>
+    <script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
+    <script src="{% static 'js/courses.js' %}"></script>
+  </body>
+</html>

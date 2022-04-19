@@ -1,0 +1,1063 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>e-Voting</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Elearn project" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'styles/bootstrap4/bootstrap.min.css' %}"
+      />
+    <link
+      href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}"
+      rel="stylesheet"
+      type="text/css"
+      />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}"
+      />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}"
+      />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'plugins/OwlCarousel2-2.2.1/animate.css' %}"
+      />
+    <link
+      href="{% static 'plugins/video-js/video-js.css' %}"
+      rel="stylesheet"
+      type="text/css"
+      />
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css' %}" />
+    <script type="text/javascript">
+       function preventBack(){
+          window.history.forward();
+       }
+       setTimeout("preventBack()", 0);
+       window.onunload = function () { null };
+      </script>
+  </head>
+  <body>
+    <div class="super_container">
+      <!-- Header -->
+
+      <header class="header">
+        <!-- Top Bar -->
+        <div class="top_bar">
+          <div class="top_bar_container">
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <div
+                    class="top_bar_content d-flex flex-row align-items-center
+                    justify-content-start">
+                    <ul class="top_bar_contact_list">
+                      <li><div class="question">Have any questions?</div></li>
+                      <li>
+                        <div>9999888877</div>
+                      </li>
+                      <li>
+                        <div>codebook@gmail.com</div>
+                      </li>
+                    </ul>
+                    <div class="top_bar_login ml-auto">
+                      <ul>
+                        <li><a href="{% url 'admin-login' %}">Admin</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Header Content -->
+        <div class="header_container">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <div
+                  class="header_content d-flex flex-row align-items-center
+                  justify-content-start">
+                  <div class="logo_container">
+                    <a href="#">
+                      <div
+                        class="logo_content d-flex flex-row align-items-end
+                        justify-content-start">
+                        <div class="logo_img">
+                          <img src="{% static 'images/logo.png' %}" alt="" />
+                        </div>
+                        <div class="logo_text">Voting</div>
+                      </div>
+                    </a>
+                  </div>
+                  <nav class="main_nav_contaner ml-auto">
+                    <ul class="main_nav">
+                      <li class="active"><a href="{% url 'home' %}">home</a></li>
+                      <li><a href="{% url 'about' %}">about us</a></li>
+
+                      <li><a href="{% url 'candi-login' %}">candiate</a></li>
+                      <li><a href="{% url 'voter-login' %}">voter</a></li>
+                      <li><a href="{% url 'election' %}">Elections</a></li>
+                      <li><a href="{% url 'contact' %}">contact</a></li>
+
+
+
+                    </ul>
+
+                    <!-- Hamburger -->
+
+                    <div class="hamburger menu_mm">
+                      <i class="fa fa-bars menu_mm" aria-hidden="true"></i>
+                    </div>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Header Search Panel -->
+        <div class="header_search_container">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <div
+                  class="header_search_content d-flex flex-row
+                  align-items-center justify-content-end">
+                  <form action="#" class="header_search_form">
+                    <input
+                      type="search"
+                      class="search_input"
+                      placeholder="Search"
+                      required="required"
+                      />
+                    <button
+                      class="header_search_button d-flex flex-column
+                      align-items-center justify-content-center">
+                      <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Menu -->
+
+      <div
+        class="menu d-flex flex-column align-items-end justify-content-start
+        text-right menu_mm trans_400">
+        <div class="menu_close_container">
+          <div class="menu_close">
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+        <div class="search">
+          <form action="#" class="header_search_form menu_mm">
+            <input
+              type="search"
+              class="search_input menu_mm"
+              placeholder="Search"
+              required="required"
+              />
+            <button
+              class="header_search_button d-flex flex-column align-items-center
+              justify-content-center menu_mm">
+              <i class="fa fa-search menu_mm" aria-hidden="true"></i>
+            </button>
+          </form>
+        </div>
+        <nav class="menu_nav">
+          <ul class="menu_mm">
+            <li class="menu_mm"><a href="{% url 'home' %}">Home</a></li>
+            <li class="menu_mm"><a href="{% url 'about' %}">about us</a></li>
+            <li class="menu_mm"><a href="{% url 'candi-login' %}">candiate</a></li>
+            <li class="menu_mm"><a href="{% url 'voter-login' %}">voter</a></li>
+            <li class="menu_mm"><a href="{% url 'contact' %}">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="menu_extra">
+          <div class="menu_phone">
+            <span class="menu_title">phone:</span>9999888877
+          </div>
+          <div class="menu_social">
+            <span class="menu_title">follow us</span>
+            <ul>
+              <li>
+                <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Home -->
+
+      <div class="home">
+        <div class="home_slider_container">
+          <!-- Home Slider -->
+          <div class="owl-carousel owl-theme home_slider">
+            <!-- Slider Item -->
+            <div class="owl-item">
+              <!-- Background image artist https://unsplash.com/@benwhitephotography -->
+              <div
+                class="home_slider_background" style="background-image:url('/static/images/bg.png')" alt="Image"></div>
+              <div class="home_container">
+                <div class="container">
+                  <div class="row">
+                    <div class="col">
+                      <div class="home_content text-center">
+                        <div class="home_logo">
+                          <img src="{% static 'images/home_logo.png' %}"
+                            alt="home page photo" />
+                        </div>
+                        <div class="home_text">
+                          <div class="home_title" style="color:coral;">VOTE FOR
+                            RIGHT</div>
+
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slider Item -->
+            <div class="owl-item">
+              <!-- Background image artist https://unsplash.com/@benwhitephotography -->
+              <div
+                class="home_slider_background"
+                style="background-image: url('/static/images/bg.png')"></div>
+              <div class="home_container">
+                <div class="container">
+                  <div class="row">
+                    <div class="col">
+                      <div class="home_content text-center">
+                        <div class="home_logo">
+                          <img src="{% static 'images/home_logo.png' %}" alt=""
+                            />
+                        </div>
+                        <div class="home_text">
+                          <div class="home_title" style="color:coral;">VOTE FOR
+                            FUTURE</div>
+
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slider Item -->
+            <div class="owl-item">
+              <!-- Background image artist https://unsplash.com/@benwhitephotography -->
+              <div
+                class="home_slider_background"
+                style="background-image: url('/static/images/bg.png')";></div>
+              <div class="home_container">
+                <div class="container">
+                  <div class="row">
+                    <div class="col">
+                      <div class="home_content text-center">
+                        <div class="home_logo">
+                          <img src="{% static 'images/home_logo.png' %}" alt=""
+                            />
+                        </div>
+                        <div class="home_text">
+                          <div class="home_title" style="color:coral;">VOTE FOR
+                            CHANGE</div>
+
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Course -->
+
+      <div class="featured">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <!-- Home Slider Nav -->
+              <div
+                class="home_slider_nav_container d-flex flex-row
+                align-items-start justify-content-between">
+                <div class="home_slider_nav home_slider_prev trans_200">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                </div>
+                <div class="home_slider_nav home_slider_next trans_200">
+                  <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </div>
+              </div>
+              <div class="featured_container">
+                <div class="row">
+                  <div class="col-lg-6 featured_col">
+                    <div class="featured_content">
+                      <div
+                        class="featured_header d-flex flex-row
+                        align-items-center justify-content-start">
+                        <div class="featured_tag"><a href="#">online voting
+                            system</a></div>
+                        <div class="featured_price ml-auto">
+                       
+                        </div>
+                      </div>
+                      <div class="featured_title">
+                        <h3>
+                          <a href="">online voting system uses</a>
+                        </h3>
+                      </div>
+                      <div class="featured_text">
+                        Online voting tools and online election voting systems
+                        help you make important decisions
+                        by gathering the input of your group in a way that’s
+                        systematic and verifiable.
+
+                        Oftentimes, these decisions are made on a yearly basis -
+                        during an event or at a particular time of the year.
+                        Or you might run ongoing polls amongst your group .
+                      </div>
+                      <div
+                        class="featured_footer d-flex align-items-center
+                        justify-content-start">
+                        <div class="featured_author_image">
+                          <img
+                            src="https://img.icons8.com/external-flat-icons-inmotus-design/67/000000/external-human-man-and-woman-flat-icons-inmotus-design.png"
+                            />
+                        </div>
+                        <div class="featured_author_name">
+                          By <small>Codebook</small>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 featured_col">
+                    <!-- Background image artist https://unsplash.com/@jtylernix -->
+                    <div
+                      class="featured_background"
+                      style="background-image: url('/static/images/index@.png')";></div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- types of elections -->
+
+      <div class="courses">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+              <div class="section_title text-center">
+                <h2>online voting categories</h2>
+              </div>
+              <div class="section_subtitle">
+                1. Parliamentary General Elections (Lok Sabha) Members of Lok
+                Sabha (House of the People)
+                2.State Assembly (Vidhan Sabha) Elections. ...
+                3. By-election. ...
+                4. Rajya Sabha (Upper House) Elections. .
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <!-- Courses Slider -->
+              <div class="courses_slider_container">
+                <div class="owl-carousel owl-theme courses_slider">
+                  <!-- Slider Item -->
+                  <div class="owl-item">
+                    <div class="course">
+                      <div class="course_image">
+                        <img src="{% static 'images/ele-1.jpg' %}" alt="" style="height: 250px;";/>
+                      </div>
+                      <div class="course_body">
+                        <div
+                          class="course_header d-flex flex-row
+                          align-items-center justify-content-start">
+                          <div class="course_tag"><a href="#">General Elections</a></div>
+                          <div class="course_price ml-auto">
+
+                          </div>
+                        </div>
+                        <div class="course_title">
+                          <h3>
+                            <samll>Lok Sabha Elections</samll>
+                          </h3>
+                        </div>
+                        <div class="course_text">
+                          The Election Commission of India is an autonomous
+                          constitutional authority responsible for
+                          administering election processes in India.
+                        </div>
+                        <div
+                          class="course_footer d-flex align-items-center
+                          justify-content-start">
+                          <div class="course_author_image">
+                            <img
+                              src="https://img.icons8.com/external-flat-icons-inmotus-design/67/000000/external-human-man-and-woman-flat-icons-inmotus-design.png"
+                              />
+                          </div>
+                          <div class="course_author_name">
+                            By <a href="#">codebook</a>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Slider Item -->
+                  <div class="owl-item" >
+                    <div class="course" >
+                      <div class="course_image">
+                        <img src="{% static 'images/ele-2.jpg' %}" style="height: 250px;"/>
+                      </div>
+                      <div class="course_body" \>
+                        <div
+                          class="course_header d-flex flex-row
+                          align-items-center justify-content-start">
+                          <div class="course_tag"><a href="#">Raja sabha
+                              elections</a></div>
+
+                        </div>
+                        <div class="course_title">
+                          <h3>
+                            <a href="{% url 'election' %}">elected by state
+                              legistatives </a>
+                          </h3>
+                        </div>
+                        <div class="course_text">
+                          There are three types of representation in Rajya Sabha
+                          :
+                          Members are elected by the elected members of state
+                          legislative
+                        </div>
+                        <div
+                          class="course_footer d-flex align-items-center
+                          justify-content-start">
+                          <div class="course_author_image">
+                            <img
+                              src="https://img.icons8.com/external-flat-icons-inmotus-design/67/000000/external-human-man-and-woman-flat-icons-inmotus-design.png"
+                              />
+                          </div>
+                          <div class="course_author_name">
+                            By <a href="#">codebook</a>
+                          
+                
+                          </div>
+                         
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                
+
+                  <!-- Slider Item -->
+                  <div class="owl-item">
+                    <div class="course">
+                      <div class="course_image">
+                        <img
+                          src="{% static 'images/ele-3.jpg' %} "
+                          alt="https://unsplash.com/@annademy" style="height: 250px;"
+                          />
+                      </div>
+                      <div class="course_body" >
+                        <div
+                          class="course_header d-flex flex-row
+                          align-items-center justify-content-start">
+                          <div class="course_tag"><a href="#">State Assembly
+                              Elections</a></div>
+
+                        </div>
+                        <div class="course_title">
+                          <h3><a href="{% url 'election' %}"></a>MLA elections</h3>
+                        </div>
+                        <div class="course_text">
+                          The Legislative Assembly elections in India are the
+                          elections in which the Indian
+                          electorate choose the members of the Vidhan Sabha.
+                        </div>
+                        <div
+                          class="course_footer d-flex align-items-center
+                          justify-content-start">
+                          <div class="course_author_image">
+                            <img
+                              src="https://img.icons8.com/external-flat-icons-inmotus-design/67/000000/external-human-man-and-woman-flat-icons-inmotus-design.png"
+                              />
+                          </div>
+                          <div class="course_author_name">
+                            By <a href="#">Codebook</a>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Courses Slider Nav -->
+                <div class="courses_slider_nav courses_slider_prev trans_200">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                </div>
+                <div class="courses_slider_nav courses_slider_next trans_200">
+                  <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Milestones -->
+
+      <div class="milestones">
+        <!-- Background image artis https://unsplash.com/@thepootphotographer -->
+        <div
+          class="parallax_background parallax-window"
+          data-parallax="scroll"
+          data-image-src="{% static 'images/milestones.jpg' %}"
+          data-speed="0.8"></div>
+        <div class="container">
+          <div class="row milestones_container">
+            <!-- Milestone -->
+            <div class="col-lg-3 milestone_col">
+              <div class="milestone text-center">
+                <div class="milestone_icon">
+                  <img src="{% static 'images/milestone_1.svg' %}" alt="" />
+                </div>
+                <div class="milestone_counter" data-end-value="{{election_count}}">0</div>
+                <div class="milestone_text">Elections</div>
+              </div>
+            </div>
+
+            <!-- Milestone -->
+            <div class="col-lg-3 milestone_col">
+              <div class="milestone text-center">
+                <div class="milestone_icon">
+                  <img src="{% static 'images/milestone_2.svg' %}" alt="" />
+                </div>
+                <div class="milestone_counter" data-end-value="{{candi_count}}">0</div>
+                <div class="milestone_text">Candiates</div>
+              </div>
+            </div>
+
+            <!-- Milestone -->
+            <div class="col-lg-3 milestone_col">
+              <div class="milestone text-center">
+                <div class="milestone_icon">
+                  <img src="{% static 'images/milestone_3.svg' %}" alt="" />
+                </div>
+                <div class="milestone_counter" data-end-value="{{voters_count}}">0</div>
+                <div class="milestone_text">Voters</div>
+              </div>
+            </div>
+
+            <!-- Milestone -->
+            <div class="col-lg-3 milestone_col">
+              <div class="milestone text-center">
+                <div class="milestone_icon">
+                  <img src="{% static 'images/milestone_4.svg' %}" alt="" />
+                </div>
+                <div class="milestone_counter" data-end-value="36">0</div>
+                <div class="milestone_text">States</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sections -->
+
+      <div class="grouped_sections">
+        <div class="container">
+          <div class="row">
+            <!-- Why Choose Us -->
+
+            <div class="col-lg-4 grouped_col">
+              <div class="grouped_title">Why online voting?</div>
+              <div class="accordions">
+                <div class="accordion_container">
+                  <div
+                    class="accordion d-flex flex-row align-items-center active">
+                    <div>online voting uses?</div>
+                  </div>
+                  <div class="accordion_panel">
+                    <div>
+                      <p>
+                        It’s a good idea to use an online voting system to:
+                        Elect your leadership: A board of directors election is
+                        a good example, where there are …
+                        Admit new members to your group. This helps you stick to
+                        a regular, fair process of …
+                        Gather anonymous feedback from your employees. Managers
+                        (and managers of managers) …
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion_container">
+                  <div class="accordion d-flex flex-row align-items-center">
+                    <div>General Elections </div>
+                  </div>
+                  <div class="accordion_panel">
+                    <div>
+                      <p>
+                        india has a parliamentary system as defined by its
+                        constitution, w
+                        ith power distributed between the central government and
+                        the states.
+                        The President of India is the ceremonial head of the
+                        country and
+                        supreme commander-in-chief for all defence forces in
+                        India.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion_container">
+                  <div class="accordion d-flex flex-row align-items-center">
+                    <div>State Elections</div>
+                  </div>
+                  <div class="accordion_panel">
+                    <div>
+                      <p>
+                        The Legislative Assembly elections in India are the
+                        elections in which
+                        the Indian electorate choose the members of the Vidhan
+                        Sabha.
+                        They are held every 5 years and
+                        the members of the legislative assembly are called MLA.
+                        The assembly elections are never carried out in same
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion_container">
+                  <div class="accordion d-flex flex-row align-items-center">
+                    <div>online voting Advantages?</div>
+                  </div>
+                  <div class="accordion_panel">
+                    <div>
+                      <p>
+                        An online voting platform is the software that’s
+                        equipped with vote security-related tools and settings
+                        (e.g. anonymity options, unique identifier keys, etc.).
+                        It should be leveraged whenever you manage an important
+                        vote or election.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Events -->
+
+            <div class="col-lg-4 grouped_col">
+              <div class="grouped_title">Upcoming Elections</div>
+              <div class="events">
+                <!-- Event -->
+                <div
+                  class="event d-flex flex-row align-items-start
+                  justify-content-start">
+                  <div>
+                    <div
+                      class="event_date d-flex flex-column align-items-center
+                      justify-content-center">
+                      <div class="event_day">20</div>
+                      <div class="event_month">April</div>
+                    </div>
+                  </div>
+                  <div class="event_body">
+                    <div class="event_title">
+                      <a href="#">General Elections</a>
+                    </div>
+                    <div class="event_subtitle">Location: Online Platform</div>
+                  </div>
+                </div>
+
+                <!-- Event -->
+                <div
+                  class="event d-flex flex-row align-items-start
+                  justify-content-start">
+                  <div>
+                    <div
+                      class="event_date d-flex flex-column align-items-center
+                      justify-content-center">
+                      <div class="event_day">23</div>
+                      <div class="event_month">April</div>
+                    </div>
+                  </div>
+                  <div class="event_body">
+                    <div class="event_title">
+                      <a href="#">Municipality Elections</a>
+                    </div>
+                    <div class="event_subtitle">Location: Online Platform</div>
+                  </div>
+                </div>
+
+                <!-- Event -->
+                <div
+                  class="event d-flex flex-row align-items-start
+                  justify-content-start">
+                  <div>
+                    <div
+                      class="event_date d-flex flex-column align-items-center
+                      justify-content-center">
+                      <div class="event_day">25</div>
+                      <div class="event_month">April</div>
+                    </div>
+                  </div>
+                  <div class="event_body">
+                    <div class="event_title">
+                      <a href="#">State Assembly Elections</a>
+                    </div>
+                    <div class="event_subtitle">Location: Online Platform</div>
+                  </div>
+                </div>
+
+                <!-- Event -->
+                <div
+                  class="event d-flex flex-row align-items-start
+                  justify-content-start">
+                  <div>
+                    <div
+                      class="event_date d-flex flex-column align-items-center
+                      justify-content-center">
+                      <div class="event_day">27</div>
+                      <div class="event_month">April</div>
+                    </div>
+                  </div>
+                  <div class="event_body">
+                    <div class="event_title">
+                      <a href="#">Rajya sabha</a>
+                    </div>
+                    <div class="event_subtitle">Location: Online Platform</div>
+                  </div>
+                </div>
+
+                <!-- Event -->
+                <div
+                  class="event d-flex flex-row align-items-start
+                  justify-content-start">
+                  <div>
+                    <div
+                      class="event_date d-flex flex-column align-items-center
+                      justify-content-center">
+                      <div class="event_day">29</div>
+                      <div class="event_month">April</div>
+                    </div>
+                  </div>
+                  <div class="event_body">
+                    <div class="event_title">
+                      <a href="#">Local body Eletions</a>
+                    </div>
+                    <div class="event_subtitle">Location: Online Platform</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- News -->
+
+            <div class="col-lg-4 grouped_col">
+              <div class="grouped_title"> About online voting</div>
+              <div class="news">
+                <!-- News Post -->
+                <div
+                  class="news_post d-flex flex-row align-items-start
+                  justify-content-start">
+                  <div>
+                    <div class="news_post_image">
+                      <img
+                        src="{% static 'images/ele-4.jpg' %}"
+                        alt="image"
+                        />
+                    </div>
+                  </div>
+                  <div class="news_post_body">
+                    <div class="news_post_date">April 02, 2018</div>
+                    <div class="news_post_title">
+                      <a href="{% url 'election' %}">Why Choose online voting?</a>
+                    </div>
+                    <div class="news_post_author">
+                      By <a href="#">codebook</a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- News Post -->
+                <div
+                  class="news_post d-flex flex-row align-items-start
+                  justify-content-start">
+                  <div>
+                    <div class="news_post_image">
+                      <img
+                        src="{% static 'images/ele-5.png' %}"
+                        alt="https://unsplash.com/@nbb_photos"
+                        />
+                    </div>
+                  </div>
+                  <div class="news_post_body">
+                    <div class="news_post_date">April 02, 2018</div>
+                    <div class="news_post_title">
+                      <a href="{% url 'election' %}">Rajya sabha elections?</a>
+                    </div>
+                    <div class="news_post_author">
+                      By <a href="#">Codebook</a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- News Post -->
+                <div
+                  class="news_post d-flex flex-row align-items-start
+                  justify-content-start">
+                  <div>
+                    <div class="news_post_image">
+                      <img
+                        src="{% static 'images/ele-6.jpg' %}"
+                        alt=""
+                        />
+                    </div>
+                  </div>
+                  <div class="news_post_body">
+                    <div class="news_post_date">April 02, 2018</div>
+                    <div class="news_post_title">
+                      <a href="{% url 'election' %}">Online Voting Advantages?</a>
+                    </div>
+                    <div class="news_post_author">
+                      By <a href="#">Codebook</a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- News Post -->
+                <div
+                  class="news_post d-flex flex-row align-items-start
+                  justify-content-start">
+                  <div>
+                    <div class="news_post_image">
+                      <img
+                        src="{% static 'images/ele-1.jpg' %}"
+                        alt=""
+                        />
+                    </div>
+                  </div>
+                  <div class="news_post_body">
+                    <div class="news_post_date">April 02, 2018</div>
+                    <div class="news_post_title">
+                      <a href="{% url 'election' %}">importance of voting</a>
+                    </div>
+                    <div class="news_post_author">
+                      By <a href="#">Codebook</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Join -->
+
+      <div class="join">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+              <div class="section_title text-center">
+                <h2>Join online voting Today</h2>
+              </div>
+              <div class="section_subtitle">
+                At the end of any political term, millions of voters are called
+                upon to cast their votes
+                for their next political representatives.
+                Unfortunately, many eligible voters will not be
+                able to reach a polling station during the election.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="button join_button">
+          <a href="#">register now
+            <div class="button_arrow">
+              <i class="fa fa-angle-right" aria-hidden="true"></i></div></a>
+        </div>
+      </div>
+
+      <!-- Footer -->
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <!-- About -->
+            <div class="col-lg-3 footer_col">
+              <div class="footer_about">
+                <div class="logo_container">
+                  <a href="#">
+                    <div
+                      class="logo_content d-flex flex-row align-items-end
+                      justify-content-start">
+                      <div class="logo_img">
+                        <img src="{% static 'images/logo.png' %}" alt="" />
+                      </div>
+                      <div class="logo_text">voting</div>
+                    </div>
+                  </a>
+                </div>
+                <div class="footer_about_text">
+                  <p>
+                    Online voting tools and online election voting systems help
+                    you make
+                    important decisions by gathering the input of your group in
+                    a way that’s systematic and verifiable.
+                  </p>
+                </div>
+                <div class="footer_social">
+                  <ul>
+                    <li>
+                      <a href="#"><i class="fa fa-google-plus"
+                          aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="copyright">
+                  <!-- Link back to Codebook can't be removed. Template is licensed under CC BY 3.0. -->
+                  Copyright &copy;
+                  <script>
+                    document.write(new Date().getFullYear());
+                  </script>
+                  All rights reserved | This template is made with
+                  <i class="fa fa-heart-o" aria-hidden="true"></i> by
+                  <a href="https://codebook.com" target="_blank">Codebook</a>
+                  <!-- Link back to Codebook can't be removed. Template is licensed under CC BY 3.0. -->
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 footer_col">
+              <div class="footer_links">
+                <div class="footer_title">Quick menu</div>
+                <ul class="footer_list">
+                  <li><a href="{% url 'home' %}">Home</a></li>
+                  <li><a href="{% url 'about' %}">About us</a></li>
+                  <li><a href="#">Testimonials</a></li>
+                  <li><a href="#">Services</a></li>
+                  <li><a href="{% url 'contact' %}">Contact</a></li>
+                  <li><a href="#">Facts</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-3 footer_col">
+              <div class="footer_links">
+                <div class="footer_title">Useful Links</div>
+                <ul class="footer_list">
+                  <li><a href="{% url 'home' %}">Home</a></li>
+                  <li><a href="#">Register</a></li>
+                  <li><a href="{% url 'election' %}">Elections</a></li>
+                  <li><a href="#">Results</a></li>
+                  <li><a href="#">Links</a></li>
+                  <li><a href="#">FAQ</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-3 footer_col">
+              <div class="footer_contact">
+                <div class="footer_title">Contact Us</div>
+                <div class="footer_contact_info">
+                  <div class="footer_contact_item">
+                    <div class="footer_contact_title">Address:</div>
+                    <div class="footer_contact_line">
+                      Pillar no:A-1665,LBnagar,Hyderabad
+                    </div>
+                  </div>
+                  <div class="footer_contact_item">
+                    <div class="footer_contact_title">Phone:</div>
+                    <div class="footer_contact_line">9999888877</div>
+                  </div>
+                  <div class="footer_contact_item">
+                    <div class="footer_contact_title">Email:</div>
+                    <div class="footer_contact_line">codebook@gmail.com</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'styles/bootstrap4/popper.js' %}"></script>
+    <script src="{% static 'styles/bootstrap4/bootstrap.min.js' %}"></script>
+    <script src="{% static 'plugins/greensock/TweenMax.min.js' %}"></script>
+    <script src="{% static 'plugins/greensock/TimelineMax.min.js' %}"></script>
+    <script src="{% static 'plugins/scrollmagic/ScrollMagic.min.js' %}"></script>
+    <script src="{% static 'plugins/greensock/animation.gsap.min.js' %}"></script>
+    <script src="{% static 'plugins/greensock/ScrollToPlugin.min.js' %}"></script>
+    <script src="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.js' %}"></script>
+    <script src="{% static 'plugins/easing/easing.js' %}"></script>
+    <script src="{% static 'plugins/video-js/video.min.js' %}"></script>
+    <script src="{% static 'plugins/video-js/Youtube.min.js' %}"></script>
+    <script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+  </body>
+</html>
